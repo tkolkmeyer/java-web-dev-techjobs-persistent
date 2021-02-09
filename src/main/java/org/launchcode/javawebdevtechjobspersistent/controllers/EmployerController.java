@@ -39,6 +39,7 @@ public class EmployerController {
 
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
+        System.out.println("displayViewEmployer method hit");
 
         Optional optEmployer = employerRepository.findById(employerId);
         if (optEmployer.isPresent()) {
