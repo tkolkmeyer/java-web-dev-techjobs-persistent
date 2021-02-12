@@ -12,4 +12,4 @@ DROP TABLE job;
 
 ## Part 4: Test it with SQL
 
-SELECT name, description FROM skill ORDER BY name ASC;
+SELECT name, description FROM skill WHERE id IS NOT NULL ORDER BY name ASC;
