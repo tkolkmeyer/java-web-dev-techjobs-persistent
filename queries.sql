@@ -11,3 +11,5 @@ SELECT name FROM employer WHERE location = 'St. Louis';
 DROP TABLE job;
 
 ## Part 4: Test it with SQL
+
+SELECT name, description FROM skill ORDER BY name ASC;
