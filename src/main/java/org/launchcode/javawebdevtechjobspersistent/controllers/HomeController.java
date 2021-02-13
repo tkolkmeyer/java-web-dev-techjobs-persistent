@@ -88,4 +88,14 @@ public class HomeController {
             return "redirect:";
         }
     }
+
+    //new get handler that returns to "index"
+    @GetMapping(value ="")
+    public String processViewJobIndex(Model model) {
+
+        List<Job> jobs = (List<Job>) jobRepository.findAll();
+        model.addAttribute("jobs", jobs);
+
+        return "index";
+    }
 }
