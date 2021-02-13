@@ -9,6 +9,8 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -32,6 +34,7 @@ public class SkillController {
             return "skills/add";
         } else {
 
+
             skillRepository.save(newSkill);
             return "redirect:";
         }
@@ -48,5 +51,15 @@ public class SkillController {
         } else {
             return "redirect:../";
         }
+    }
+
+
+    @GetMapping(value = "")
+    public String processViewSkillIndex(Model model) {
+
+        List<Skill> skills = (List<Skill>) skillRepository.findAll();
+        model.addAttribute("skills", skills);
+
+        return "skills/index";
     }
 }
