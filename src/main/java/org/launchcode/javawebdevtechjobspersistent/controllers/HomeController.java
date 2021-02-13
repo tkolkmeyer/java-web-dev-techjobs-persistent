@@ -89,7 +89,6 @@ public class HomeController {
         }
     }
 
-    //new get handler that returns to "index"
     @GetMapping(value ="")
     public String processViewJobIndex(Model model) {
 
